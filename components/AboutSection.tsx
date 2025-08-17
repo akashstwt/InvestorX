@@ -54,7 +54,7 @@ const AboutSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-16">
         <div className="grid lg:grid-cols-4 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div

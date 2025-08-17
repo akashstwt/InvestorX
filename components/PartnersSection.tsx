@@ -30,7 +30,7 @@ const PartnersSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex flex-col gap-12 lg:gap-16 items-start w-full">
           {/* Left Content */}
           <motion.div
@@ -38,7 +38,7 @@ const PartnersSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6 flex justify-between items-center w-full"
+            className="space-y-6 flex flex-col lg:flex-row justify-between lg:items-center w-full"
           >
     
             <motion.h2
@@ -68,7 +68,7 @@ const PartnersSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8}}
             viewport={{ once: true }}
-            className="grid grid-cols-4 gap-6 w-full"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
           >
             {partners.map((partner, index) => (
               <motion.div

@@ -5,8 +5,8 @@ import InfiniteMovingCardsDemo from './InfiniteScroll'
 
 const HeroSection = () => {
   return (
-    <section className="pt-20 md:pt-0 bg-[#f8f7ff]">
-      <div className="max-w-[1650px] h-[920px] space-y-2 mx-auto px-4 sm:px-6 lg:px-0">
+    <section className="pt-32 md:pt-32 lg:pt-0 bg-[#f8f7ff]">
+      <div className="max-w-[1700px] h-[920px] space-y-2 mx-auto px-4 sm:px-6 lg:px-0">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center justify-between lg:pl-16">
           {/* Left Content */}
           <motion.div
@@ -65,7 +65,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="relative flex justify-end"
           >
-            <div className="relative w-[600px] h-[400px] md:h-[600px] lg:h-[800px] rounded-b-3xl bg-gradient-to-br from-blue-400 via-purple-500 to-blue-600 overflow-hidden">
+            <div className="relative w-full lg:w-[600px] h-[400px] md:h-[600px] lg:h-[800px] rounded-b-3xl bg-gradient-to-br from-blue-400 via-purple-500 to-blue-600 overflow-hidden">
             </div>
           </motion.div>
         </div>

@@ -14,7 +14,7 @@ const PortfolioSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-[#f8f7ff]">
-      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,7 +40,7 @@ const PortfolioSection = () => {
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
               className={`bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all h-96 duration-300 group cursor-pointer
-                ${index === 3 ? 'md:col-span-2 lg:col-span-2' : ''}
+                ${index === 3 ? 'md:col-span-1 lg:col-span-2' : ''}
               `}
             >
               <div className="flex flex-col justify-between h-full w-full">

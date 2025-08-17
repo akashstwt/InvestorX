@@ -16,7 +16,7 @@ const Header = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50"
     >
-      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <motion.div
@@ -29,7 +29,7 @@ const Header = () => {
             <span className="text-xl font-bold text-gray-900">Invstor X</span>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item}
@@ -54,7 +54,7 @@ const Header = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-shadow duration-200"
+            className="hidden lg:block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-shadow duration-200"
           >
             Pitch your startup →
           </motion.button>
@@ -62,7 +62,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -74,7 +74,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-100 py-4"
+            className="lg:hidden border-t bg-white border-gray-100 p-4"
           >
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (

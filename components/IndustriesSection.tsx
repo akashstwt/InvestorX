@@ -34,7 +34,7 @@ const IndustriesSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-[#f8f7ff]">
-      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
+      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
