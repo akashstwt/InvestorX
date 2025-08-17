@@ -27,7 +27,7 @@ const ApproachSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,10 +37,7 @@ const ApproachSection = () => {
           className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 md:mb-16"
         >
           <div>
-            <p className="text-blue-600 font-medium text-sm uppercase tracking-wide mb-4">
-              04/
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900">
               Our approach
             </h2>
           </div>
@@ -49,28 +46,28 @@ const ApproachSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-medium"
+              className="text-white hover:text-black/60 font-medium bg-gradient-to-r from-blue-500 to-purple-600 hover:white transition-colors duration-500 px-8 py-3 border border-black/40 rounded-full"
             >
               Pitch your startup →
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-200"
+              className="text-black hover:text-white font-medium hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:white transition-colors duration-500 px-8 py-3 border border-black/40 rounded-full"
             >
               Learn more
             </motion.button>
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
           {/* Left - Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative col-span-2"
           >
             <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-3xl bg-gradient-to-br from-blue-400 via-purple-500 to-blue-600 overflow-hidden">
               <motion.div
@@ -118,7 +115,7 @@ const ApproachSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-8 col-span-1"
           >
             <div className="space-y-6">
               <motion.h3
@@ -126,7 +123,7 @@ const ApproachSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-4xl md:text-5xl font-bold text-gray-900"
+                className="text-4xl md:text-6xl font-medium text-gray-900"
               >
                 {steps[currentStep].number}
               </motion.h3>

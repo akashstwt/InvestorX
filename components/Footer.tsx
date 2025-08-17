@@ -60,7 +60,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
         {/* Main Footer Content */}
         <div className="py-16 md:py-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Smartphone, HardDrive, Code, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Smartphone, HardDrive, Code, Twitter, Instagram, Linkedin, Github } from 'lucide-react'
 
 const IndustriesSection = () => {
   const industries = [
@@ -28,12 +28,13 @@ const IndustriesSection = () => {
   const socialLinks = [
     { icon: Twitter, href: '#' },
     { icon: Instagram, href: '#' },
-    { icon: Linkedin, href: '#' }
+    { icon: Linkedin, href: '#' },
+    { icon: Github, href: '#' }
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-[#f8f7ff]">
+      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,16 +43,13 @@ const IndustriesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-blue-600 font-medium text-sm uppercase tracking-wide mb-4">
-            05/
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900">
             Industries we invest in
           </h2>
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16 md:mb-24">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-16 mb-16 md:mb-24">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.title}
@@ -93,7 +91,7 @@ const IndustriesSection = () => {
           viewport={{ once: true }}
           className="relative rounded-3xl overflow-hidden"
         >
-          <div className="relative h-64 md:h-80 bg-gradient-to-r from-blue-500 via-purple-600 to-blue-700 flex items-center justify-center">
+          <div className="relative h-96 md:h-[650px] bg-gradient-to-r from-blue-500 via-purple-600 to-blue-700 flex items-center justify-center">
             {/* Animated background */}
             <motion.div
               animate={{
@@ -110,13 +108,12 @@ const IndustriesSection = () => {
             
             {/* Content */}
             <div className="relative z-10 text-center text-white space-y-6 px-4">
-              <p className="text-sm uppercase tracking-wide opacity-80">06/</p>
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+                className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight"
               >
                 We invest in the companies<br />
                 of the future, today
@@ -126,7 +123,7 @@ const IndustriesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="text-white/80 max-w-md mx-auto"
+                className="text-white/80 max-w-lg mx-auto"
               >
                 Lorem ipsum dolor sit amet consectetur solicitudin pulvinar ipsum ut 
                 vestibus molestuddin dui lorem ac.
@@ -145,7 +142,7 @@ const IndustriesSection = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-blue-600 px-8 py-3 rounded-full font-medium hover:shadow-lg transition-shadow duration-200"
                 >
-                  Pitch your startup →
+                  Pitch your startup  →
                 </motion.button>
                 
                 <div className="flex gap-4">

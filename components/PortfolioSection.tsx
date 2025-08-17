@@ -13,8 +13,8 @@ const PortfolioSection = () => {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-[#f8f7ff]">
+      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,10 +23,8 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-blue-600 font-medium text-sm uppercase tracking-wide mb-4">
-            03/
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900">
             Our portfolio
           </h2>
         </motion.div>
@@ -38,28 +36,33 @@ const PortfolioSection = () => {
               key={item.name}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer"
+              className={`bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all h-96 duration-300 group cursor-pointer
+                ${index === 3 ? 'md:col-span-2 lg:col-span-2' : ''}
+              `}
             >
-              <div className="flex justify-between items-start mb-4">
-                <div className="text-2xl md:text-3xl font-light text-gray-300">
-                  {item.logo}
+              <div className="flex flex-col justify-between h-full w-full">
+                {/* Bottom: External Link Icon */}
+                <div className="flex justify-end mt-4">
+                  <ExternalLink className="group-hover:text-blue-600 text-gray-400 hover:rotate-45 duration-300" size={20} />
                 </div>
-                <motion.div
-                  whileHover={{ scale: 1.2, rotate: 45 }}
-                  className="text-gray-400 group-hover:text-blue-600 transition-colors duration-200"
-                >
-                  <ExternalLink size={20} />
-                </motion.div>
-              </div>
-              
-              <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-gray-900">{item.name}</h3>
-                <p className="text-gray-600">
-                  {item.category} / {item.year}
-                </p>
+                
+                {/* Middle: Logo */}
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="text-2xl md:text-4xl font-bold text-gray-300 px-6 py-2 rounded-full">
+                    {item.logo}
+                  </div>
+                </div>
+
+                {/* Top: Name and Category/Date */}
+                <div className="space-y-2 mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900">{item.name}</h3>
+                  <p className="text-gray-600">
+                    {item.category} / {item.year}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -76,7 +79,7 @@ const PortfolioSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-200 underline underline-offset-4"
+            className="text-black font-medium hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:white transition-colors duration-500 px-8 py-3 border border-black/40 rounded-full"
           >
             Browse investment portfolio
           </motion.button>

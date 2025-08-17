@@ -1,12 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import InfiniteMovingCardsDemo from './InfiniteScroll'
 
 const HeroSection = () => {
   return (
-    <section className="pt-20 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="pt-20 md:pt-0 bg-[#f8f7ff]">
+      <div className="max-w-[1650px] h-[920px] space-y-2 mx-auto px-4 sm:px-6 lg:px-0">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center justify-between lg:pl-16">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -14,20 +15,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-blue-600 font-medium text-sm uppercase tracking-wide"
-            >
-              01/
-            </motion.p>
             
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 leading-tight"
             >
               We invest in the companies of the future, today
             </motion.h1>
@@ -36,7 +29,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-gray-600 text-lg leading-relaxed max-w-md"
+              className="text-gray-600 text-base leading-relaxed max-w-lg"
             >
               Lorem ipsum dolor sit amet consectetur adipiscing elit pulvinar ipsum ut vestibus molestudoin dui lorem ac id vel nunc ipsum magna.
             </motion.p>
@@ -58,7 +51,7 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-200 underline underline-offset-4"
+                className="text-black font-medium hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:white transition-colors duration-200 px-8 py-3 border border-black rounded-full"
               >
                 Investment portfolio
               </motion.button>
@@ -70,47 +63,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative"
+            className="relative flex justify-end"
           >
-            <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] rounded-3xl bg-gradient-to-br from-blue-400 via-purple-500 to-blue-600 overflow-hidden">
-              <motion.div
-                animate={{
-                  rotate: [0, 360],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-y-12"
-              />
-              <motion.div
-                animate={{
-                  y: [0, -20, 0],
-                  x: [0, 10, 0],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute top-1/4 right-1/4 w-32 h-32 bg-white/20 rounded-full blur-xl"
-              />
-              <motion.div
-                animate={{
-                  y: [0, 20, 0],
-                  x: [0, -15, 0],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-purple-300/30 rounded-full blur-lg"
-              />
+            <div className="relative w-[600px] h-[400px] md:h-[600px] lg:h-[800px] rounded-b-3xl bg-gradient-to-br from-blue-400 via-purple-500 to-blue-600 overflow-hidden">
             </div>
           </motion.div>
+        </div>
+        <div className="py-5">
+          <InfiniteMovingCardsDemo />
         </div>
       </div>
     </section>

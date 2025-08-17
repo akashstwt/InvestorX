@@ -14,41 +14,41 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100"
+      className="fixed top-0 left-0 right-0 z-50"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-6"
           >
             <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">IX</span>
             </div>
             <span className="text-xl font-bold text-gray-900">Invstor X</span>
-          </motion.div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item}
-                href="#"
-                whileHover={{ y: -2 }}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item}
+                  href="#"
+                  whileHover={{ y: -2 }}
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                >
+                  {item}
+                </motion.a>
+              ))}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center space-x-1 text-gray-700"
               >
-                {item}
-              </motion.a>
-            ))}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-1 text-gray-700"
-            >
-              <ShoppingCart size={20} />
-              <span>Cart(0)</span>
-            </motion.div>
-          </nav>
+                <ShoppingCart size={20} />
+                <span>Cart(0)</span>
+              </motion.div>
+            </nav>
+          </motion.div>
 
           {/* CTA Button */}
           <motion.button
@@ -90,7 +90,7 @@ const Header = () => {
                 <ShoppingCart size={20} />
                 <span>Cart(0)</span>
               </div>
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full font-medium w-fit">
+              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium w-fit">
                 Pitch your startup →
               </button>
             </div>

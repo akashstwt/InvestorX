@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 
 const PartnersSection = () => {
   const partners = [
@@ -29,32 +30,23 @@ const PartnersSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="max-w-[1650px] mx-auto px-4 sm:px-6 lg:px-16">
+        <div className="flex flex-col gap-12 lg:gap-16 items-start w-full">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 flex justify-between items-center w-full"
           >
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-blue-600 font-medium text-sm uppercase tracking-wide"
-            >
-              07/
-            </motion.p>
-            
+    
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 leading-tight"
             >
               Our partners
             </motion.h2>
@@ -68,49 +60,25 @@ const PartnersSection = () => {
             >
               Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas armet tellus felis leo vestibulum ut neque mus.
             </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium"
-              >
-                Pitch your startup →
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-200"
-              >
-                Browse all team members
-              </motion.button>
-            </motion.div>
           </motion.div>
 
           {/* Right Content - Partners Grid */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8}}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-4 gap-6 w-full"
           >
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                transition={{ duration: 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-100"
+                className="bg-white h-80 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer border border-black/20"
               >
                 <div className="flex justify-end mb-4">
                   <motion.div
@@ -121,13 +89,15 @@ const PartnersSection = () => {
                   </motion.div>
                 </div>
                 
-                <div className="text-center space-y-4">
-                  <div className="relative mx-auto w-16 h-16 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 p-0.5">
+                <div className="text-center mt-10 space-y-4">
+                  <div className="relative mx-auto w-24 h-24 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 p-0.5">
                     <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                      <img 
+                      <Image 
                         src={partner.image} 
                         alt={partner.name}
                         className="w-full h-full object-cover"
+                        width={64}
+                        height={64}
                       />
                     </div>
                   </div>
@@ -144,6 +114,30 @@ const PartnersSection = () => {
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-8 w-full items-center duration-300 justify-center"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:bg-white hover:text-black duration-300 transition-all text-white px-8 py-3 rounded-full font-medium"
+              >
+                Pitch your startup →
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className=" text-black duration-300 transition-all px-8 py-3 rounded-full border border-black/40 font-medium"
+              >
+                Browse all team members
+              </motion.button>
+            </motion.div>
         </div>
       </div>
     </section>
